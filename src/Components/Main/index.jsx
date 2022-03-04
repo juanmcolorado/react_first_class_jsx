@@ -1,7 +1,7 @@
 import H3 from '../H3'
-import P1 from '../P1'
 import Button from '../Button'
 import Li from '../Li'
+import Article from '../Article'
 
 function Main () {
     return (
@@ -21,14 +21,15 @@ function Main () {
         </section>
 
         <section>
-          <article>
-            <card> ^ 112 </card>
-            <H3 />
-            <P1 />
-            <Button />
-            <Button />
-              <span>2</span>
-          </article>
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+          <Article />
         </section>
       </main>
     )
