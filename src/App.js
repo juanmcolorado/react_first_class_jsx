@@ -30,11 +30,12 @@ function App() {
     <main>
         <section>
            {KoderList.map(koder => {
+             const {koderName, generation, status } = koder
              return (
                <Article 
-                  koderName= {koder.koderName}
-                  generation= {koder.generation}
-                  status= {koder.status}
+                  koderName= {koderName}
+                  generation= {generation}
+                  status= {status}
                />
              )
            })}
