@@ -1,7 +1,11 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import HomeLight from './Components/HomeLight'
 import Formulario from './Components/H2'
 import H2 from './Components/H2'
+import { Card, ListGroup } from 'react-bootstrap'
+
+
+
 
 
 function App() {
@@ -19,13 +23,23 @@ function App() {
     }
 
   return <div className='App'>
-            {/*<div className="home-light">
-              <HomeLight estaPrendido={isOn}/> 
-              <button onClick={toggleLight}>Conmutador</button>
-              </div>*/}
+    {/*<div className="home-light">
+  <HomeLight estaPrendido={isOn}/> 
+  <button onClick={toggleLight}>Conmutador</button>
+  </div>*/}
             <input type="text" name="" id="Titulo" onChange={titleChange}/>
             <H2  Title={titleText}/>
           </div>
+
+
+
+  
+
+  return <div className='App'>
+    
+  </div>
+
+
 }
 
 export default App;
