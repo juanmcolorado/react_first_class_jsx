@@ -2,35 +2,11 @@ import { Container, Row, Col, Card, Button, CardTitle, CardText } from 'reactstr
 import { useState } from 'react'
 
 function App() {
-  const [koderList, setKoderList] = useState([
-    {
-      name: 'Vicente Gutierrez',
-      generation: '15g'
-    },
-    {
-      name: 'Erik Gutierrez',
-      generation: '15g'
-    },
-    {
-      name: 'Viridiana Austria',
-      generation: '15g'
-    },
-    {
-      name: 'Luis Juarez',
-      generation: '15g'
-    },
-    {
-      name: 'Francisco Paz',
-      generation: '15g'
-    },
-  ])
 
   const [koderData, setKoderData] = useState({})
   const getInputData = event => {
     let property = event.target.name
     let value = event.target.value
-    console.log("property: ", property)
-    console.log("value: ", value)
     setKoderData({...koderData, [property]: value })
   }
 
@@ -43,9 +19,6 @@ function App() {
     let allKoders = koderList
     allKoders.splice(koderIndex, 1)
     setKoderList([...allKoders])
-    console.log(allKoders)
-
-    // console.log(koderIndex)
   }
 
   return (
