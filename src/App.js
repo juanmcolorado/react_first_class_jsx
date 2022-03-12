@@ -3,71 +3,47 @@ import { useState } from 'react'
 
 function App() {
 
-  const [koderData, setKoderData] = useState({})
-  const getInputData = event => {
-    let property = event.target.name
-    let value = event.target.value
-    setKoderData({...koderData, [property]: value })
-  }
 
-  const saveKoder = () => {
-    setKoderList([...koderList, koderData])
-  }
-
-  const deletKoder = (event) => {
-    let koderIndex = event.target.dataset.koderIndex
-    let allKoders = koderList
-    allKoders.splice(koderIndex, 1)
-    setKoderList([...allKoders])
-  }
+  
 
   return (
     <div className='App'>
-      <Container>
-        <Row>
-          <Col xs="12" md="6">
-            {
-              koderList.map( (koder, index) => {
-                const {name, generation} = koder
-                return (
-                  <Card
-                  key={index}
-                    body
-                    inverse
-                    style={{
-                      backgroundColor: '#333',
-                      borderColor: '#333'
-                    }}
-                    className="mt-3"
-                  >
-                    <CardTitle tag="h5">
-                      {name}
-                    </CardTitle>
-                    <CardText>
-                      {generation}
-                    </CardText>
-                    <Button data-koder-index={index} onClick={deletKoder}>
-                      Delete Koder
-                    </Button>
-                  </Card>
-                )
-              })
-            }
+      <Container class="fluid">
+        
+          <Col  className='col-xs-6'>
+          <Card
+            body
+            className="text-center"
+          >
+            <CardTitle tag="h5">
+              To do List
+            </CardTitle>
+            <div>
+            <CardText>
+              Lista de tareas
+            </CardText>
+            </div>
+            <div>
+            <input type="checkbox" name="" id="" />
+            </div>
+          </Card>
           </Col>
-          <Col xs="12" md="6">
-            <form action="" className="p-3 bg-dark text-white border rounded">
-              <div className="form-group mb-3">
-                <label htmlFor="'name">Nombre del Koder</label>
-                <input className="form-control" type="text" name="name" onChange={getInputData}></input>
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="generation">Generación</label>
-                <input className="form-control" type="text" name="generation" onChange={getInputData}></input>
-              </div>
-              <div className="btn btn-success" onClick={saveKoder}>Guardar Koder</div>
-            </form>  
+        
+          <Col classNanme="col-xs-6 ">
+          <form action="" className="p-3 bg-dark text-white border rounded mb-3">
+            <div className="form-group">
+              <label htmlFor="tarea"></label>
+              <input type="text" className='form-control' onChange={ToDo}/>
+            </div>
+            <div className="form-group">
+              <label htmlFor="fecha"></label>
+              <input type="date" className='form-control' onChange={ToDoDate}/>
+            </div>
+            <Button>Guardar Tarea</Button>
+            <div className="btn btn-success mt-3">Guardar Tarea</div>
+          </form>
           </Col>
-        </Row>
+        
       </Container>
     </div>
   );
