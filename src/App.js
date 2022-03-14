@@ -46,7 +46,7 @@ function App() {
   }
 
   const addBalloon = () => {
-    setBalloonsRequirement(...balloonsRequirement, balloonObject)
+    setBalloonsRequirement([...balloonsRequirement, balloonObject])
   }
 
   return (
@@ -55,13 +55,16 @@ function App() {
         <div className="row">
           <div className="col-12 col-md-8">
             <div className="d-flex">
-          {balloonsRequirement.map((balloon, index) => {
-            const {shape, color, size} = balloon
-            return( <Balloon 
-              key={index} 
-              shape={shape} 
-              color={color} 
-              size={size} />)
+            {balloonsRequirement.map((balloon, index) => {
+                const { shape, color, size } = balloon
+                return (
+                  <Balloon
+                    key={index}
+                    shape={shape}
+                    color={color}
+                    size={size}
+                  />
+                )
               })}
             </div>  
           </div>
@@ -82,7 +85,7 @@ function App() {
               <label htmlFor="">Forma</label>
               <select name="shape" id="" className='form-select' aria-label='Default select example' onChange={balloonInputHandler}>
                 <option value="square">Cuadrado</option>
-                <option value="redonde">Redondo</option>
+                <option value="redondo">Redondo</option>
                 <option value="long">Largo</option>
               </select>
             </div>
